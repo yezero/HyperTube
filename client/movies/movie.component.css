@@ -1,0 +1,119 @@
+h3{
+    font-weight: 600;
+    line-height: 1.3em;
+    font-size: 1.3em;
+    margin-bottom: 8px;
+    color: white;
+}
+
+.top{
+    min-height: 450px;
+    margin-top: 20px;
+}
+
+.title{
+    color: white !important;
+    margin-bottom: 38px;
+}
+
+.title h2{
+    display: inline;
+    font-size: 2.4em;
+    font-weight: 700;
+}
+
+.title h2 span{
+    opacity: 0.6 !important;
+    font-size: 0.8em !important;
+    font-weight: 400 !important;
+}
+
+.add-ons{
+    background-color: #333;
+    color: white;
+    border: 2px solid white;
+    margin-right: 15px;
+}
+
+.add-ons:hover{
+    background-color: white;
+    color: #333;
+}
+
+.cast_top{
+    margin-bottom: 44px;
+    text-align: center;
+    align-items: center;
+}
+
+.pp{
+    height: 130px;
+    width: 100px;
+    border-radius: 150px;
+    margin-top: 10px;
+    border: 3px solid white;
+}
+
+.ppp{
+    height: 150px;
+    width: 120px;
+    border: 3px solid white;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.ppp:hover{
+    border: 3px solid green;
+}
+
+.ppp:active{
+    opacity: 0.5;
+}
+
+.p{
+    margin-bottom: 3px !important;
+}
+
+.more{
+    text-decoration: underline;
+    color: white;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+.more:hover{
+    color: green;
+}
+
+.more:active{
+    opacity: 0.5;
+}
+
+.review{
+    word-wrap: break-word;
+    max-height: 400px;
+    max-width: 400px;
+    min-width: 400px;
+    padding: 20px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    border-radius: 7px;
+}
+
+.sim{
+    margin-top: 3px;
+    margin-left: 6px;
+    font-size: medium;
+    font-weight: 100;
+    cursor: pointer;
+    max-width: 120px;
+}
+
+.sim:hover{
+    text-decoration: underline;
+    color: gray;
+}
+
+.sim:active{
+    opacity: 0.5;
+}

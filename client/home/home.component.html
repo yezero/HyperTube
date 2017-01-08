@@ -1,0 +1,37 @@
+<div class="home-body">
+    <nav class="navbar navbar-inverse nav1">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand">
+                    <h1 [routerLink]="['/home', 'main']">HyperTube</h1>
+                </a>
+                <p class="navbar-text tmp3">Torrent Streaming Made Easy</p>
+            </div>
+            <ul class="nav navbar-nav pull-right tmp1">
+                <li><a routerLinkActive="btn-warning css"
+                       [routerLink]="['/home', 'main']"
+                >Home</a></li>
+                <li><a routerLinkActive="btn-warning css"
+                       [routerLink]="['/home', 'browse']"
+                >Browse</a></li>
+                <li><a routerLinkActive="btn-warning css"
+                       [routerLink]="['/home', 'search']"
+                >Search</a></li>
+                <li><a routerLinkActive="btn-warning css"
+                       [routerLink]="['/home', 'members']"
+                >Members</a></li>
+                <p class="navbar-text tmp2">Signed in as
+                    <strong
+                            [routerLink]="['/home', 'profile']"
+                    >{{name}}</strong></p>
+                <img style="width: 50px; height: 50px;" src="{{image}}" alt="pp">
+                <button class="btn btn-danger btn-lg" (click)="onLogout()" type="button">LogOut</button>
+            </ul>
+        </div>
+    </nav>
+    <div id="google_translate_element" class="pull-right" style="margin-right: 20px; margin-top: -18px;" #google></div>
+    <router-outlet></router-outlet>
+    <footer class="lazyloaded foot">
+        The footer
+    </footer>
+</div>

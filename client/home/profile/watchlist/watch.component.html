@@ -1,0 +1,31 @@
+<h2 style="color: white; font-weight: 600;">WatchList</h2>
+<div>
+    <div>
+        <div class="row" style="padding: 30px">
+            <div
+                    *ngFor="let movie of user.watchList; let i = index;"
+                    class="col-xs-6 col-md-3"
+                    style="margin-bottom: 10px; max-height: 320px; min-height: 320px;
+                            min-width: 200px; max-width: 200px;"
+            >
+                <div class="thumbnail">
+                    <img [routerLink]="['/home', 'movie', movie.id, movie.type]"  src="{{movie.image}}" alt="test">
+                    <div class="caption">
+                        <h3>{{movie.title}}
+                            <span class="label label-primary tmp2 pull-right"
+                            >{{movie.year}}</span>
+                        </h3>
+                        <h5><span class="label label-default">
+                                {{movie.genre}}</span>
+                            <span class="label label-default pull-right">
+                                        {{movie.type}}
+                                    </span>
+                        </h5>
+                    </div>
+                    <button class="btn btn-danger btn-xs"
+                            type="button" (click)="onRemove(i)">Remove</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

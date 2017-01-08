@@ -1,0 +1,36 @@
+<h2 style="color: white; font-weight: 600;">Privacy</h2>
+<div>
+    <div class="col-md-8 col-md-offset-1">
+        <form>
+            <div>
+                <span>
+                    <input type="checkbox" id="watchlist" [(checked)]="user.watchView" #watch>
+                    <span style="color: grey; font-size: large; margin-left: 5px;"
+                    >Watchlist Hidden</span>
+                </span>
+                <p style="color: #fff; font-size: medium">
+                    This means that no one would be able to view your watchlist</p>
+            </div>
+            <div>
+                <span>
+                    <input type="checkbox" id="favourites" [(checked)]="user.favView" #fav>
+                    <span style="color: grey; font-size: large; margin-left: 5px;"
+                    >Favourites Hidden</span>
+                </span>
+                <p style="color: #fff; font-size: medium">
+                    This means that no one would be able to view your favourites list</p>
+            </div>
+            <div>
+                <span>
+                    <input type="checkbox" id="recent" [(checked)]="user.recentView" #recent>
+                    <span style="color: grey; font-size: large; margin-left: 5px;"
+                    >Recent Hidden</span>
+                </span>
+                <p style="color: #fff; font-size: medium">
+                    This means that no one would be able to view your recent watched list</p>
+            </div>
+            <button class="btn btn-primary pull-right" style="margin-top: 60px;"
+            (click)="onSave(watch, fav, recent)">Save</button>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,68 @@
+h1{
+    color: red;
+}
+
+.test{
+    width: 100%;
+    background-color: #0f0f0f;
+    min-height: 200px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+p{
+    color: white;
+}
+
+.tmp1{
+    color: gray;
+}
+
+.pp{
+    height: 190px;
+    width: 190px;
+    border-radius: 80px;
+    margin-top: 30px;
+}
+.top{
+    margin-bottom: 25px;
+    text-align: center;
+    align-items: center;
+}
+
+.tmp2{
+    font-size: medium;
+}
+
+.ppp{
+    height: 90px;
+    width: 70px;
+    border: 3px solid white;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.ppp:hover{
+    border: 3px solid green;
+}
+
+.ppp:active{
+    opacity: 0.5;
+}
+
+.sim{
+    margin-top: 3px;
+    font-size: smaller;
+    font-weight: 100;
+    cursor: pointer;
+    max-width: 70px;
+}
+
+.sim:hover{
+    text-decoration: underline;
+    color: gray;
+}
+
+.sim:active{
+    opacity: 0.5;
+}

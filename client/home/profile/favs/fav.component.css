@@ -1,0 +1,26 @@
+img{
+    cursor: pointer;
+    height: 190px;
+    width: 190px;
+}
+
+img:hover{
+    opacity: 0.8;
+}
+
+img:active{
+    opacity: 0.5;
+}
+
+.tmp2{
+    font-size: small !important;
+}
+
+h3{
+    font-weight: 700;
+    font-size: larger;
+}
+
+h4{
+    font-size: medium !important;
+}

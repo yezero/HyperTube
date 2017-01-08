@@ -1,0 +1,35 @@
+h1{
+    color: rgb(87, 91, 97);
+    font-size: 40px;
+    font-weight: 300;
+    font-family: "Open Sans",Roboto,Helvetica,sans-serif;
+    text-align: center;
+}
+
+form{
+    border-radius: 3px;
+    background-color: white;
+    text-align: center;
+}
+
+.tmp{
+    padding-top: 40px;
+    padding-bottom: 60px;
+    padding-left: 70px;
+    padding-right: 80px;
+}
+
+.tmp1{
+    padding-top: 15px;
+    padding-left: 15px;
+    color: white;
+    font-size: medium;
+}
+
+a{
+    cursor: pointer;
+}
+
+div{
+    cursor: default;
+}

@@ -1,0 +1,12 @@
+video{
+    width: 100%;
+    background-color: #000;
+    height: 700px;
+    border: 4px solid silver;
+}
+canvas{
+    width: 100%;
+    background-color: #000;
+    height: 700px;
+    border: 4px solid silver;
+}

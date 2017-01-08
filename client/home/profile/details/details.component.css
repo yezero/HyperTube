@@ -1,0 +1,37 @@
+label{
+    color: #4cae4c;
+    font-size: larger;
+    font-weight: 500;
+}
+
+label span {
+    font-weight: 100;
+    text-decoration: underline;
+    color: #00B7FF;
+    font-size: small;
+    cursor: pointer;
+    margin-left: 30px;
+}
+
+label span:hover{
+    font-size: medium;
+    color: #2b669a;
+}
+
+label span:active{
+    opacity: 0.5;
+}
+
+.val{
+    color: mintcream;
+    font-size: medium;
+    margin-left: 30px;
+}
+
+button{
+    margin-left: 10px;
+}
+
+.editTab{
+    margin-bottom: 40px;
+}

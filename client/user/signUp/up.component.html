@@ -1,0 +1,69 @@
+<div class="row">
+    <div class="container sign form-signin">
+        <div class="col-md-6 col-md-offset-3">
+            <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)">
+                <div class="tmp">
+                    <h1>Sign Up</h1>
+                    <div class="form-group">
+                        <label for="userName"></label>
+                        <input type="text" id="userName"
+                               class="form-control" formControlName="userName"
+                               placeholder="UserName">
+                    </div>
+                    <div class="form-group">
+                        <label for="firstName"></label>
+                        <input type="text" id="firstName"
+                               class="form-control" formControlName="firstName"
+                               placeholder="FirstName">
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName"></label>
+                        <input type="text" id="lastName"
+                               class="form-control" formControlName="lastName"
+                               placeholder="LastName">
+                    </div>
+                    <div class="form-group">
+                        <label for="email"></label>
+                        <input type="email" id="email"
+                               class="form-control" formControlName="email"
+                               placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                        <label for="password"></label>
+                        <input type="password" id="password"
+                               class="form-control" formControlName="password"
+                               placeholder="Password">
+                    </div>
+                    <div class="form-group">
+                        <label for="rePassword"></label>
+                        <input type="password" id="rePassword"
+                               class="form-control" formControlName="rePassword"
+                               placeholder="Confirm Password">
+                    </div>
+                    <div class="form-button">
+                        <button class="btn btn-warning btn-lg btn-block"
+                                type="submit"
+                                [disabled]="!myForm.valid"
+                        >Sign Up</button>
+                    </div>
+                    <hr>
+                    <div *ngIf="error" class="alert alert-danger fade in">
+                        <strong>Error! </strong> {{errorMsg}}
+                    </div>
+                    <div *ngIf="success" class="alert alert-success fade in">
+                        <strong>Success! </strong> {{successMsg}}
+                    </div>
+                    <hr>
+                </div>
+            </form>
+            <div class="row">
+                <div class="container">
+                    <div class="col-md-6 col-md-offset-1 tmp1">
+                        Already have an account?
+                        <a [routerLink]="['/auth', 'signin']">Sign In</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

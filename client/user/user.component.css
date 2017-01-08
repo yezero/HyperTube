@@ -1,0 +1,16 @@
+article{
+    background-color: transparent !important;
+    border: hidden !important;
+}
+
+h1{
+    font-weight: 600 !important;
+    font-size: 4.6em !important;
+    color: white !important;
+    cursor: default;
+}
+
+b{
+    cursor: default;
+    color: #e38d13;
+}

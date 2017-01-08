@@ -1,0 +1,130 @@
+<div style="height: 90px; padding-left: 100px; margin-bottom: 40px;">
+    <h1 style="color: white; font-weight: 300; font-size: 5.5em;">Search</h1>
+</div>
+<div class="row" style="background-color: #000; padding: 15px; margin-bottom: 20px;">
+    <div class="col-md-8 col-md-offset-2">
+        <form style="margin-bottom: 20px;">
+            <div style="margin-bottom: 20px;">
+                <div class="form-group" style="max-width: 800px;  display: inline-block; margin-right: 150px;">
+                    <label for="title" style="color: white; font-size: large;">Title</label>
+                    <input type="text" id="title"
+                           class="form-control" style="width: 450px"
+                           placeholder="Title" #title>
+                </div>
+                <div class="form-group" style="max-width: 600px; display: inline-block; margin-right: 100px;">
+                    <label for="person" style="color: white; font-size: large;">Cast</label>
+                    <input type="text" id="person"
+                           class="form-control"
+                           placeholder="Actor/Actress" #person>
+                </div>
+                <div class="form-group" style="max-width: 600px; display: inline-block;">
+                    <label for="keyword" style="color: white; font-size: large;">Keyword</label>
+                    <input type="text" id="keyword"
+                           class="form-control"
+                           placeholder="Keyword" #keyword>
+                </div>
+            </div>
+            <div>
+                <div class="form-group" style="display: inline-block; margin-right: 60px;">
+                    <label style="color: white; font-size: large; margin-bottom: 10px;">YEAR</label>
+                    <span style="display: block;">
+                        <span style="color: gray; margin-right: 5px; font-size: medium">From </span>
+                        <select id="fromyear" class="dropdown year" #fromYear>
+                            <option *ngFor="let year of years" value="{{year}}"
+                            >{{year}}</option>
+                        </select>
+                        <span style="color: gray; margin-left: 5px; margin-right: 5px; font-size: medium">To</span>
+                        <select id="toyear" class="dropdown year" #toYear>
+                            <option *ngFor="let year of years" value="{{year}}"
+                            >{{year}}</option>
+                        </select>
+                    </span>
+                </div>
+                <div class="form-group" style="display: inline-block; margin-right: 60px;">
+                    <label style="color: white; font-size: large; margin-bottom: 10px;">RATING</label>
+                    <span style="display: block;">
+                        <span style="color: gray; margin-right: 5px; font-size: medium">From </span>
+                        <select id="ratefrom" class="dropdown year" #fromRate>
+                            <option *ngFor="let year of ratings" value="{{year}}"
+                            >{{year}}</option>
+                        </select>
+                        <span style="color: gray; margin-left: 5px; margin-right: 5px; font-size: medium">To</span>
+                        <select id="rateto" class="dropdown year" #toRate>
+                            <option *ngFor="let year of ratings" value="{{year}}"
+                            >{{year}}</option>
+                        </select>
+                    </span>
+                </div>
+                <div class="form-group" style="display: inline-block; margin-right: 60px;">
+                    <label style="color: white; font-size: large; margin-bottom: 10px;">GENRE</label>
+                    <span style="display: block;">
+                        <span style="color: gray; margin-right: 5px; font-size: medium">With </span>
+                        <select id="genre" class="dropdown year" #genre>
+                            <option *ngFor="let year of genres" value="{{year}}"
+                            >{{year}}</option>
+                        </select>
+                    </span>
+                </div>
+                <div class="form-group" style="display: inline-block; margin-right: 60px;">
+                    <label style="color: white; font-size: large; margin-bottom: 10px;">SORT</label>
+                    <span style="display: block;">
+                        <span style="color: gray; margin-right: 5px; font-size: medium">By </span>
+                        <select id="sort" class="dropdown year" #sort>
+                            <option *ngFor="let year of sorts" value="{{year}}"
+                            >{{year}}</option>
+                        </select>
+                    </span>
+                </div>
+            </div>
+            <div *ngIf="error">
+                <h3 style="color: red">{{errorMsg}}</h3>
+            </div>
+            <button class="btn btn-warning pull-right search_btn"
+                    (click)="searchBtn(title.value, person.value, keyword.value, fromYear.value,
+                    toYear.value, fromRate.value, toRate.value, genre.value, sort.value)"
+                    type="submit">Search</button>
+        </form>
+    </div>
+</div>
+<div style="min-height: 50%;">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div *ngIf="movies.length > 1" class="test">
+                <div class="row" style="padding: 30px">
+                    <template ngFor let-movie [ngForOf]="movies">
+                        <div
+                                class="col-xs-6 col-md-3"
+                                style="margin-bottom: 10px; max-height: 590px; min-height: 590px;"
+                        >
+                            <div class="thumbnail">
+                                <img src="{{movie.image}}"
+                                     alt="test"
+                                     [routerLink]="['/home', 'movie', movie.id, movie.type]">
+                                <div class="caption">
+                                    <h3>{{movie.title}}
+                                        <span class="pull-right" style="color: gold; font-size: medium;">
+                                        {{movie.rating}}<span class="glyphicon glyphicon-star"
+                                                              style="color: gold"
+                                                              aria-hidden="true"></span>
+                                    </span>
+                                    </h3>
+                                    <span class="label label-primary tmp2"
+                                    >{{movie.year}}</span>
+                                    <h4><span class="label label-default">
+                                {{movie.genre}}</span>
+                                        <span class="label label-default pull-right">
+                                        {{movie.type}}
+                                    </span>
+                                    </h4>
+                                    <p style="overflow: hidden; font-size: small; max-height: 100px">
+
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+<div style="height: 90px; padding-left: 100px; margin-bottom: 70px;">
+    <h1 style="color: white; font-weight: 300; font-size: 5.5em;">Profile</h1>
+</div>
+<div style="min-height: 50%;">
+    <div class="row">
+        <div class="col-md-9 col-md-offset-2" style="min-height: 600px;">
+            <div class="col-md-7 col-md-push-3" style="min-height: 600px; padding: 30px;">
+                <router-outlet></router-outlet>
+            </div>
+            <div class="col-md-2 col-md-pull-7" style="min-height: 600px">
+                <div class="top">
+                    <img class="pp" src="data:image/png;base64,{{user.image}}">
+                    <h2 style="color: white">{{user.userName}}</h2>
+                    <h3 class="tmp1">Joined in {{user.year}}</h3>
+                </div>
+                <ul>
+                    <li [routerLink]="['/home', 'profile', 'details']">Details</li>
+                    <li [routerLink]="['/home', 'profile', 'privacy']">Privacy</li>
+                    <li [routerLink]="['/home', 'profile', 'watch']">Watchlist</li>
+                    <li [routerLink]="['/home', 'profile', 'favs']">Favourites</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

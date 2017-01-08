@@ -1,0 +1,38 @@
+<div style="height: 90px; padding-left: 100px; margin-bottom: 70px;">
+    <h1 style="color: white; font-weight: 300; font-size: 5.5em;">Home</h1>
+</div>
+<div class="row"
+     *ngFor="let group of Groups"
+>
+    <div class="col-md-8 col-md-offset-2">
+        <div class="test">
+            <nav class="navbar navbar-inverse nav1">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                     <h1>{{group.title}}</h1>
+                    </div>
+                </div>
+            </nav>
+            <div class="row" style="padding: 15px;">
+                <div class="col-xs-6 col-md-3"
+                     *ngFor="let movie of group.movies"
+                >
+                    <div class="thumbnail tmp1">
+                        <img [routerLink]="['/home', 'movie', movie.id, movie.type]"  src="{{movie.image}}" alt="test">
+                        <div class="caption">
+                            <p>
+                                <a [routerLink]="['/home', 'movie', movie.id, movie.type]"  class="a">{{movie.title}}</a>
+                            </p>
+                            <span class="label label-primary tmp2"
+                            >{{movie.year}}</span>
+                            <span class="label label-primary tmp2 pull-right" style="background-color: green"
+                            >{{movie.type}}</span>
+                            <h4><span class="label label-default">
+                                {{movie.genre}}</span></h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,53 @@
+<div class="row">
+    <div class="container sign form-signin">
+        <div class="col-md-6 col-md-offset-3">
+            <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)">
+                <div class="tmp">
+                    <h1>Sign In</h1>
+                    <div class="form-group">
+                        <label for="email"></label>
+                        <input type="email" id="email"
+                               class="form-control" formControlName="email"
+                               placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                        <label for="password"></label>
+                        <input type="password" id="password"
+                               class="form-control" formControlName="password"
+                               placeholder="Password">
+                    </div>
+                    <div class="form-button">
+                        <button class="btn btn-warning btn-lg btn-block"
+                                type="submit"
+                                [disabled]="!myForm.valid"
+                        >Sign In</button>
+                    </div>
+                    <hr>
+                    <div *ngIf="error" class="alert alert-danger fade in">
+                        <strong>Error! </strong> {{errorMsg}}
+                    </div>
+                    <h3>OR</h3>
+                    <hr>
+                    <div class="form-button">
+                        <button class="btn btn-primary btn-lg"
+                                type="button" style="margin-left: -50px"
+                                (click)="fbLogin()"
+                        >via Facebook</button>
+                        <button class="btn btn-primary btn-lg"
+                                type="button" style="margin-left: 35px"
+                                (click)="wtcLogin()"
+                        >via 42</button>
+                    </div>
+                </div>
+            </form>
+            <div class="row">
+                <div class="container">
+                    <div class="col-md-6 col-md-offset-1 tmp1">
+                        Don't have an account?
+                        <a [routerLink]="['/auth', 'signup']">Sign Up</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

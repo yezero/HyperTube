@@ -1,0 +1,59 @@
+h1{
+    color: red;
+}
+
+.year{
+    font-size: 1.5em;
+    overflow-y: scroll;
+}
+
+.search_btn{
+    outline: none;
+    padding: 10px;
+    background: green;
+    border-color: green;
+}
+
+.search_btn:hover{
+    padding: 15px;
+}
+
+.search_btn:active{
+    opacity: 0.5;
+    background: green;
+    border-color: green;
+}
+
+select{
+    outline: none;
+}
+
+.tmp1{
+    background-color: #333 !important;
+    border-color: #333 !important;
+}
+
+.tmp2{
+    font-size: medium !important;
+}
+
+img{
+    cursor: pointer;
+    width: 100% !important;
+}
+
+img:hover{
+    opacity: 0.8;
+}
+
+img:active{
+    opacity: 0.5;
+}
+
+.test{
+    width: 100%;
+    background-color: #0f0f0f;
+    min-height: 200px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}

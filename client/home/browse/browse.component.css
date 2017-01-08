@@ -1,0 +1,116 @@
+.test{
+    width: 100%;
+    background-color: #0f0f0f;
+    min-height: 200px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+.topA{
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    font-size: larger;
+    border-radius: 3px;
+    margin-bottom: -5px;
+    cursor: pointer;
+}
+
+.topA a{
+    cursor: pointer;
+    font-size: x-large;
+    color: white;
+    font-weight: 500;
+    text-decoration: none !important;
+}
+
+.topA:hover{
+    cursor: pointer;
+}
+
+.tmp1{
+}
+
+h1{
+    color: gray;
+    font-weight: 600;
+    cursor: default;
+}
+
+.image{
+    float: left;
+    width: 185px;
+    margin-right: 13px;
+    height: 278px;
+    overflow: hidden;
+}
+
+.image a{
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.image a img{
+    outline: none;
+}
+
+.year{
+    font-size: 1.5em;
+    overflow-y: scroll;
+}
+
+
+.block{
+    margin-bottom: 34px;
+    width: 483px;
+    background-color: #fff;
+    display: inline-block;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.a{
+    text-decoration: none !important;
+    color: #000;
+    font-weight: 700;
+    font-size: large;
+    cursor: pointer;
+}
+
+.a:hover{
+    color: #777;
+}
+
+.tmp1{
+    background-color: #333 !important;
+    border-color: #333 !important;
+}
+
+.tmp2{
+    font-size: medium !important;
+}
+
+img{
+    cursor: pointer;
+    width: 100% !important;
+}
+
+img:hover{
+    opacity: 0.8;
+}
+
+img:active{
+    opacity: 0.5;
+}
+
+h3{
+    font-weight: 700;
+    font-size: larger;
+}
+
+h4{
+    font-size: medium !important;
+}

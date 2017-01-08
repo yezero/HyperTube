@@ -1,0 +1,35 @@
+body {
+    background: linear-gradient(rgba(25, 27, 29, 0.75), rgba(25, 27, 29, 0.75)), url("/images/home1.jpg") no-repeat;
+    background-size: cover;
+    /*filter:alpha(opacity=50);
+    filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0.5);*/
+    padding: 0;
+    z-index: -1;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    background-color: rgb(134, 140, 150);
+}
+
+a {
+  color: #00B7FF;
+}
+
+input.ng-invalid.ng-touched{
+  border: 2px red solid;
+}
+
+.active{
+    border: 2px blue solid;
+    background-color: blue;
+    color: white;
+}
+
+.imgBack{
+    background-color: #0f0f0f;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.9;
+    z-index: -1;
+}

@@ -1,0 +1,27 @@
+<div style="height: 90px; padding-left: 100px; margin-bottom: 40px;">
+    <h1 style="color: white; font-weight: 300; font-size: 5.5em;">Streaming</h1>
+</div>
+<div style="min-height: 50%;">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <h2 style="color: #0f0f0f; font-weight: 700; margin-left: 30px; font-size: 3.5em;">{{title}}</h2>
+        </div>
+        <div *ngIf="movieFeed != null" class="col-md-10 col-md-offset-1"
+             style="padding: 50px; align-content: center" #videoPanel>
+            <video
+                    src="{{movieFeed}}"
+                    controls
+                   (play)="changePlayStatus(true)"
+                   (pause)="changePlayStatus(false)"
+                   (click)="onVideoClick($event)"
+                   (seeked)="onSeeked($event)"
+                   #video>
+                <
+                <!--<source src="{{movieFeed}}"
+                        type='video/webm;codecs="vp8, vorbis"'/>
+                <source src="{{movieFeed}}"
+                        type='video/mp4;codecs="avc1.42E01E, mp4a.40.2"'/>-->
+            </video>
+        </div>
+    </div>
+</div>

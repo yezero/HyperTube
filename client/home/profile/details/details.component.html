@@ -1,0 +1,86 @@
+<h2 style="color: white; font-weight: 600;">Details</h2>
+<div>
+    <div class="col-md-6 col-md-offset-1">
+        <form>
+            <div class="form-group">
+                <label for="firstName">UserName
+                    <span (click)="editClick('userName')"> Edit?</span></label>
+                <p class="val">{{user.userName}}</p>
+                <div *ngIf="edit === 'userName'" class="editTab">
+                    <input type="text" id="userName" class="form-control"
+                           name="content" required #username>
+                    <button class="btn btn-danger pull-right"
+                            (click)="editCancel()" type="button">Cancel</button>
+                    <button class="btn btn-primary pull-right" type="button"
+                    (click)="editSave('userName', username)">Edit</button>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="firstName">First Name
+                    <span (click)="editClick('firstName')"> Edit?</span></label>
+                <p class="val">{{user.firstName}}</p>
+                <div *ngIf="edit === 'firstName'" class="editTab">
+                    <input type="text" id="firstName" class="form-control"
+                           name="content" required #firstname>
+                    <button class="btn btn-danger pull-right"
+                            (click)="editCancel()" type="button">Cancel</button>
+                    <button class="btn btn-primary pull-right" type="button"
+                            (click)="editSave('firstName', firstname)">Edit</button>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="lastName">Last Name
+                    <span (click)="editClick('lastName')"> Edit?</span></label>
+                <p class="val">{{user.lastName}}</p>
+                <div *ngIf="edit === 'lastName'" class="editTab">
+                    <input type="text" id="lastName" class="form-control"
+                           name="content" required #lastname>
+                    <button class="btn btn-danger pull-right"
+                            (click)="editCancel()" type="button">Cancel</button>
+                    <button class="btn btn-primary pull-right" type="button"
+                            (click)="editSave('lastName', lastname)">Edit</button>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="email">Email
+                    <span (click)="editClick('email')"> Edit?</span></label>
+                <p class="val">{{user.email}}</p>
+                <div *ngIf="edit === 'email'" class="editTab">
+                    <input type="text" id="email" class="form-control"
+                           name="content" required #email>
+                    <button class="btn btn-danger pull-right"
+                            (click)="editCancel()" type="button">Cancel</button>
+                    <button class="btn btn-primary pull-right" type="button"
+                            (click)="editSave('email', email)">Edit</button>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="country">Country
+                    <span (click)="editClick('country')"> Edit?</span></label>
+                <p class="val">{{user.country}}</p>
+                <div *ngIf="edit === 'country'" class="editTab">
+                    <input type="text" id="country" class="form-control"
+                           name="content" required #country>
+                    <button class="btn btn-danger pull-right"
+                            (click)="editCancel()" type="button">Cancel</button>
+                    <button class="btn btn-primary pull-right" type="button"
+                            (click)="editSave('country', country)">Edit</button>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="bio">Bio
+                    <span (click)="editClick('bio')"> Edit?</span></label>
+                <p class="val">{{user.bio}}</p>
+                <div *ngIf="edit === 'bio'" class="editTab">
+                    <textarea id="bio" class="form-control" #bio></textarea>
+                    <button class="btn btn-danger pull-right"
+                            (click)="editCancel()" type="button">Cancel</button>
+                    <button class="btn btn-primary pull-right" type="button"
+                            (click)="editSave('bio', bio)">Edit</button>
+                </div>
+            </div>
+            <button class="btn btn-primary pull-right" style="margin-top: 60px;"
+            (click)="onSave()">Save</button>
+        </form>
+    </div>
+</div>

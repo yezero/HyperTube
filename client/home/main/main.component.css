@@ -1,0 +1,46 @@
+h1{
+    color: gray;
+    font-weight: 600;
+    cursor: default;
+}
+
+.test{
+    width: 100%;
+    background-color: #0f0f0f;
+    min-height: 200px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+.a{
+    text-decoration: none !important;
+    color: #fff;
+    font-weight: 700;
+    font-size: large;
+    cursor: pointer;
+}
+
+.a:hover{
+    color: #777;
+}
+
+.tmp1{
+    background-color: #333 !important;
+    border-color: #333 !important;
+}
+
+.tmp2{
+    font-size: small !important;
+}
+
+img{
+    cursor: pointer;
+}
+
+img:hover{
+    opacity: 0.8;
+}
+
+img:active{
+    opacity: 0.5;
+}

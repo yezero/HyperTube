@@ -1,0 +1,138 @@
+<div class="row" style="color: white; font-size: medium;">
+    <!-- top layer with movie info -->
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2 top">
+            <div class="col-md-7 col-md-push-4">
+                <div class="title">
+                    <h2 *ngIf="details != null">{{details.title}}
+                        <span>({{details.year}})</span>
+                    </h2>
+                </div>
+                <!-- add to fav, rate && add to watchlist -->
+                <div>
+                    <button *ngIf="!fav.value" type="button" (click)="onFav()"
+                            class="btn btn-default add-ons">
+                        <span class="glyphicon glyphicon-heart"
+                              aria-hidden="true"></span> Add To Favourites
+                    </button>
+                    <button *ngIf="fav.value" type="button" (click)="onFav()"
+                            class="btn btn-default add-ons">
+                        <span class="glyphicon glyphicon-heart" style="color: red"
+                              aria-hidden="true"></span> Remove From Favourites
+                    </button>
+                    <button *ngIf="!watch.value" type="button" (click)="onWatch()"
+                            class="btn btn-default add-ons">
+                        <span class="glyphicon glyphicon-bookmark"
+                              aria-hidden="true"></span> Add To Watchlist
+                    </button>
+                    <button *ngIf="watch.value" type="button" (click)="onWatch()"
+                            class="btn btn-default add-ons">
+                        <span class="glyphicon glyphicon-bookmark"
+                              style="color: red" aria-hidden="true"></span> Remove From Watchlist
+                    </button>
+                    <button *ngIf="!like.value" type="button" (click)="onLike()"
+                            class="btn btn-default add-ons">
+                        <span class="glyphicon glyphicon-star"
+                              aria-hidden="true"></span> Like It
+                    </button>
+                    <button *ngIf="like.value" type="button" (click)="onLike()"
+                            class="btn btn-default add-ons">
+                        <span class="glyphicon glyphicon-star"
+                              style="color: red;" aria-hidden="true"></span> Unlike It
+                    </button>
+                    <button *ngIf="details != null" class="btn btn-danger pull-right">{{details.type}}</button>
+                </div>
+                <!-- ends here-->
+                <h3>Overview</h3>
+                <div *ngIf="details != null" style="color: white; font-size: 1em">
+                    <p>{{details.overview}}</p>
+                </div>
+                <div *ngIf="details != null" style="margin-top: 20px;">
+                    <h4 style="font-weight: 600; color: gray;">Original Language</h4>
+                    <p>{{details.language}}</p>
+                </div>
+                <div *ngIf="details != null">
+                    <h4 style="font-weight: 600; color: gray;">Runtime</h4>
+                    <p>{{details.runtime}} mins</p>
+                </div>
+                <div>
+                    <h4 style="font-weight: 600; color: gray;">Genres</h4>
+                    <span *ngFor="let genre of genres">
+                        {{genre.name}}
+                    </span>
+                </div>
+                <div *ngIf="details != null && type == 'movie'">
+                    <h4 style="font-weight: 600; color: gray;">Year</h4>
+                    <p>{{details.year}}</p>
+                </div>
+                <div *ngIf="details != null && type == 'series'">
+                    <h4 style="font-weight: 600; color: gray;">First Air Date: <span style="color: white">{{details.first}}</span></h4>
+                </div>
+                <div *ngIf="details != null && type == 'series'">
+                    <h4 style="font-weight: 600; color: gray;">Last Air Date: <span style="color: white">{{details.last}}</span></h4>
+                </div>
+                <div *ngIf="details != null && type == 'series'">
+                    <h4 style="font-weight: 600; color: gray;">Seasons: <span style="color: white">{{details.seasons}}</span></h4>
+                </div>
+                <div *ngIf="details != null && type == 'series'">
+                    <h4 style="font-weight: 600; color: gray;">Episodes: <span style="color: white">{{details.episodes}}</span></h4>
+                </div>
+                <h3 *ngIf="details != null" style="font-weight: 600; color: green">{{details.ageRating}}</h3>
+                <div>
+                    <div type="button" class="btn-warning btn-lg"
+                         style="text-align: center; align-items: center;
+                         align-content: center; cursor: pointer;">
+                        <span style="font-weight: 600;"
+                              [routerLink]="['/home', 'stream', id, type, title]"
+                        >Watch</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-md-pull-7">
+                <div *ngIf="details != null">
+                    <img style="max-width: 400px; max-height: 500px;"
+                         src="{{details.image}}" alt="test">
+                </div>
+            </div>
+        </div>
+        <!-- cast begins here -->
+        <div class="col-md-8 col-md-offset-2">
+            <h3 style="color: white; margin-left: 50px;">Cast</h3>
+            <template ngFor let-cast [ngForOf]="casts" let-i="index">
+                <div *ngIf="more || i < 4" class="cast_top col-xs-6 col-md-3">
+                    <img class="pp" src="{{cast.image}}">
+                    <p class="p" style="color: gray; font-weight: 500">{{cast.name}}</p>
+                    <p class="p">{{cast.character}}</p>
+                </div>
+            </template>
+            <p *ngIf="!more" class="pull-right more" (click)="onMoreClick()">more</p>
+        </div>
+        <div class="col-md-8 col-md-offset-2" style="margin-bottom: 20px;">
+            <div class="col-md-4 col-md-push-7">
+                <span class="glyphicon glyphicon-star" style="color: green;" aria-hidden="true"></span>
+                <span style="color: gray; font-weight: 500; font-size: 1.4em;">Movie Reviews</span>
+                <div *ngIf="reviews != null" class="review">
+                    <div *ngFor="let review of reviews" class="row" style="padding: 10px; background-color: black; margin-bottom: 10px; border-radius: 14px;">
+                        <p style="color: gray; font-weight: 500">{{review.name}}</p>
+                        <p style="font-size: smaller; font-weight: 100; ">{{review.content}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-md-pull-4">
+                <h2 style="color: gray; font-weight: 600">Story</h2>
+                <p *ngIf="details != null">{{details.overview}}</p>
+            </div>
+        </div>
+        <!-- -->
+        <div class="col-md-8 col-md-offset-2">
+            <h3 style="color: white; margin-left: 50px;">Similar</h3>
+            <div class="col-xs-6 col-md-3" *ngFor="let sim of similar">
+                <div>
+                    <img [routerLink]="['/home', 'movie', sim.id, sim.type]" class="ppp" src="{{sim.image}}" alt="test">
+                    <p [routerLink]="['/home', 'movie', sim.id, sim.type]" class="sim">{{sim.title}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ends here top layer -->
+</div>
